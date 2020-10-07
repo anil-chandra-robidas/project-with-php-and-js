@@ -13,7 +13,7 @@
     <div class="container">
       <h4>PROJECT PHP AND JS FOR FRONTEND TEAM</h4>
 
-    <form action="<?php $_SERVER['PHP_SELF']; ?>" method="POST" id="buyersubmitform" enctype="multipart/form-data">
+    <form action="form.php" method="POST" id="buyersubmitform" enctype="multipart/form-data">
       <div class="row">
         <div class="col-md-6">
 
@@ -38,16 +38,19 @@
           <div class="form-group">
             <label for="buyerphone">Phone <span>*</span></label>
             <input type="number" class="form-control" name="buyerphone" placeholder="Enter Phone" id="buyerphone" />
+            <span id="phoneterror" class="text-warn"></span>
           </div>
 
           <div class="form-group">
             <label for="buyeramount">Amount  <span>*</span></label>
             <input type="number" class="form-control" name="buyeramount" placeholder="Enter Amount" id="buyeramount" />
+            <span id="amounterror" class="text-warn"></span>
           </div> 
 
           <div class="form-group">
             <label for="buyerreceiptid">Receipt Id  <span>*</span></label>
             <input type="text" class="form-control" name="buyerreceiptid" placeholder="Enter Receipt Id" id="buyerreceiptid" />
+            <span id="reviderror" class="text-warn"></span>
           </div>
 
         </div>
@@ -57,24 +60,25 @@
           <div class="form-group">
             <label for="buyenote">Note <span>*</span></label>
             <textarea class="form-control" name="buyenote" rows="5" id="buyenote"></textarea>
+            <span id="noteerror" class="text-warn"></span>
           </div>
 
           <div class="checkbox-wrapper">
             <p> Has a coupon code?</p>
              <div class="form-check-inline">
             <label class="form-check-label">
-              <input type="checkbox" class="form-check-input" value="yes">Yes
+              <input type="checkbox" class="form-check-input" name="cyes" value="yes">Yes
             </label>
           </div>
 
           <div class="form-check-inline">
             <label class="form-check-label">
-              <input type="checkbox" class="form-check-input" value="no">No
+              <input type="checkbox" class="form-check-input" name="cno" value="no">No
             </label>
           </div>
           </div>
 
-          <div class="coupon" style="display: ">
+          <div class="coupon" id="couponid">
             <div class="form-group">
             <label for="buyercoupon">Coupon </label>
             <input type="text" class="form-control hidden" name="buyercoupon" placeholder="Enter Coupon" id="buyercoupon">
